@@ -1,0 +1,225 @@
+html,
+body {
+    font-family: ROboto, sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+}
+.header {
+    grid-area: header;
+}
+.main {
+    grid-area: main;
+    margin-top: 20px;
+}
+.footer {
+    grid-area: footer;
+}
+.main__wrapper {
+    display: grid;
+    grid-template-columns: 200px minmax(300px, 1fr) 200px;
+    grid-template-areas: "aside bd-content bd-secondary";
+    column-gap: 10p;
+}
+
+.aside {
+    grid-area: aside;
+}
+.bd-content {
+    grid-area: bd-content;
+    padding: 15px;
+}
+.bd-secondary {
+    grid-area: bd-secondary;
+}
+.bd-secondary ul {
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.header {
+    background-color: #712cf9;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .short-menu {
+    display: none;
+}
+.header .version {
+    padding: 0 10px;
+    color: white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+.header .nav-bar {
+    display: flex;
+    align-items: center;
+}
+.header .theme {
+    color: white;
+}
+.header a {
+    color: white;
+    text-decoration: none;
+}
+.header ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.header li {
+    padding: 0 10px;
+    font-size: 20px;
+}
+.logo svg {
+    color: white;
+}
+.social_media svg {
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+.main li {
+    padding-bottom: 10px;
+}
+
+.footer__wrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 
+    "bootstrap-title list_links";
+    column-gap: 10px;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+.bootstrap-title {
+    grid-area: bootstrap-title;
+}
+.list_links {
+    grid-area: list_links;
+    margin-left: 75px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.list_links h2 {
+    margin-top: 0;
+}
+
+.footer .bootstrap-title span{
+    font-size: 25px;
+}
+.footer__wrapper ul {
+    padding: 0;
+}
+.footer_logo {
+    display: flex;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 991px) {
+    .header .full-menu {
+        display: none;
+    }
+.header .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+    align-items: center;
+    height: 69px;
+    margin: 0 20px;
+}
+
+    .header .short-menu {
+        display: block;
+        color: white;
+    }
+
+    .aside {
+        display: none;
+    }
+    .main__wrapper {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "bd-secondary"
+        "bd-content";
+        row-gap: 10px;
+        margin-left: 20px;
+    }
+    .main__wrapper .bd-secondary {
+        margin-left: 20px;
+    }
+
+    .header .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "bootstrap-title"
+        "list_links";
+        column-gap: 10px;
+    }
+
+    .footer .bootstrap-title {
+        width: 300px;
+    }
+
+    .footer .bootstrap-wrapper li {
+        margin-top: 10px;
+    }
+
+    .footer .list_links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "links-footer guides-footer"
+        "projects-footer communiti-footer";
+        margin-left: 0;
+        
+
+    }
+
+    .footer .list_links li {
+        margin-top: 7px;
+    }
+
+    .footer .links-footer {
+        grid-area: links-footer;
+    }
+    .footer .guides-footer {
+        grid-area: guides-footer;
+    }
+    .footer .projects-footer {
+        grid-area: projects-footer;
+    }
+    .footer .communiti-footer {
+        grid-area: communiti-footer;
+    }
+    
+}
